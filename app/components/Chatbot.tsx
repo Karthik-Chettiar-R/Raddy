@@ -72,15 +72,19 @@ async function sendMessage(e: React.FormEvent) {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 bg-black text-white p-4 rounded-full shadow-lg"
+        className="fixed bottom-6 right-6 p-4 rounded-full shadow-lg bg-[var(--primary)] text-[var(--primary-foreground)]"
+        aria-label="Open Chatbot"
       >
         💬
       </button>
 
       {/* Chat Window */}
       {open && (
-        <div ref={chatRef} className="fixed bottom-20 right-6 w-80 h-96 bg-white shadow-xl rounded-lg flex flex-col">
-          <div className="p-3 border-b font-semibold">
+        <div
+          ref={chatRef}
+          className="fixed bottom-20 right-6 w-80 h-96 bg-[var(--popover)] text-[var(--popover-foreground)] shadow-xl rounded-lg flex flex-col"
+        >
+          <div className="p-3 border-b border-[var(--border)] font-semibold">
             Chat Assistant
           </div>
 
@@ -93,16 +97,16 @@ async function sendMessage(e: React.FormEvent) {
             {loading && <div>Bot is typing…</div>}
           </div>
 
-          <form onSubmit={sendMessage} className="p-2 border-t flex">
+          <form onSubmit={sendMessage} className="p-2 border-t border-[var(--border)] flex">
             <input
               value={input}
               onChange={e => setInput(e.target.value)}
               placeholder="Type a message..."
-              className="flex-1 border rounded px-2 py-1 text-sm"
+              className="flex-1 border rounded px-2 py-1 text-sm bg-transparent text-[inherit] border-[var(--border)] placeholder:text-[var(--muted-foreground)]"
             />
             <button
               type="submit"
-              className="ml-2 px-3 bg-black text-white rounded"
+              className="ml-2 px-3 bg-[var(--primary)] text-[var(--primary-foreground)] rounded"
             >
               Send
             </button>
