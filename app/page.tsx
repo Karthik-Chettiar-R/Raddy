@@ -1,6 +1,7 @@
 "use client"
+import {UserSchema}  from "@/schemas/userSchema"
 
-import React from "react"
+import {Analytics} from '@vercel/analytics'
 import {
   Card,
   CardHeader,
@@ -12,9 +13,16 @@ import {
 import { Button } from "@/components/ui/button"
 
 export default function Home() {
+  const p = UserSchema.parse({
+    username: "kdecrsdd",
+    password: "23recverv"
+  });
+  console.log(p)
+
   return (
+    
     <main className="min-h-screen bg-background p-6 sm:p-10">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <Analytics /><div className="max-w-4xl mx-auto space-y-8">
         {/* Hero */}
         <section className="text-center pt-8">
           <h1 className="text-3xl sm:text-4xl font-semibold">

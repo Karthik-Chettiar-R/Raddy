@@ -10,7 +10,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { SiteHeader } from "@/components/site-header";
-
+import {Analytics} from '@vercel/analytics'
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,6 +35,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
+      <Analytics />
       <title>Raddy <img ></img></title>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

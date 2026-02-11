@@ -91,10 +91,10 @@ async function sendMessage(e: React.FormEvent) {
           <div className="flex-1 overflow-y-auto p-3 space-y-2 text-sm">
             {messages.map((m, i) => (
               <div key={i}>
-                <b>{m.role === 'user' ? 'You' : 'Bot'}:</b> {m.content}
+                <b>{m.role === 'user' ? 'You' : 'Raddy'}:</b> {m.content}
               </div>
             ))}
-            {loading && <div>Bot is typing…</div>}
+            {loading && <div>Raddy is typing…</div>}
           </div>
 
           <form onSubmit={sendMessage} className="p-2 border-t border-[var(--border)] flex">
