@@ -1,7 +1,7 @@
 "use client"
 import {UserSchema}  from "@/schemas/userSchema"
 
-import {Analytics} from '@vercel/analytics'
+
 import {
   Card,
   CardHeader,
@@ -18,11 +18,9 @@ export default function Home() {
     password: "23recverv"
   });
   console.log(p)
-
   return (
-    
     <main className="min-h-screen bg-background p-6 sm:p-10">
-      <Analytics /><div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-8">
         {/* Hero */}
         <section className="text-center pt-8">
           <h1 className="text-3xl sm:text-4xl font-semibold">
